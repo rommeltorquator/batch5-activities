@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 300px;
+            height: 350px;
+            background-color: #999999;
+        }
+
+        .tile {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f3f3;
+            color: #333333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .enter {
+            background-color: #666666;
+            color: #ffffff;
+        }
+
+        .screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            border: 5px solid #666666;
+            color: #333333;
+            font-size: 21px;
+            width: 300px;
+            height: 75px;
+            /* background-color: green; */
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">6666</div>
+    <div class="main">
+        <div class="tile" id="one">1</div>
+        <div class="tile" id="two">2</div>
+        <div class="tile" id="three">3</div>
+        <div class="tile" id="add">+</div>
+        <div class="tile" id="four">4</div>
+        <div class="tile" id="five">5</div>
+        <div class="tile" id="six">6</div>
+        <div class="tile" id="subtract">-</div>
+        <div class="tile" id="seven">7</div>
+        <div class="tile" id="eight">8</div>
+        <div class="tile" id="nine">9</div>
+        <div class="tile" id="divide">/</div>
+        <div class="tile enter" id="enter">=</div>
+        <div class="tile" id="zero">0</div>
+        <div class="tile" id="multiply">*</div>
+    </div>
+
+    <script>
+        /* numbers */
+        var one = document.getElementById('one');
+        var two = document.querySelector('#two');
+        var three = document.querySelector('#three');
+        var four = document.querySelector('#four');
+        var five = document.querySelector('#five');
+        var six = document.querySelector('#six');
+        var seven = document.querySelector('#seven');
+        var eight = document.querySelector('#eight');
+        var nine = document.querySelector('#nine');
+        var zero = document.querySelector('#zero');        
+    </script>
+</body>
+</html>
