@@ -1,0 +1,57 @@
+body {
+    background: #ebebe3;
+    font-family: 'Paytone One', sans-serif;
+    line-height: 1.5;
+    letter-spacing: .5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#main {
+    width: 800px;
+}
+
+#image {
+    width: 100%;
+    text-align: center;
+}
+
+#img-caption {
+    font-size: 15px;    
+}
+
+#title {
+    font-size: 47px;
+    color: purple;
+}
+
+h2 {
+    font-size: 29px;
+}
+
+#tribute-info, #img-caption, h2 {
+    color: #2b2b28;
+}
+
+#tribute-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+}
+
+#tribute-link {
+    font-weight: bold;
+    border-bottom: 2px solid purple;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    color: purple;
+}
+
+#justify {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    color: #2b2b28;
+    text-align: justify;
+}

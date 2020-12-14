@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;        
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+
+        .border {
+            border: 4px solid #453823;
+        }
+
+        .container {
+            width: 40vw;
+            height: 40vw;
+
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+        }
+
+        .white, .green {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-height: 43%;
+            max-width: 43%;
+        }
+
+        .white {
+            background-color: antiquewhite;
+        }
+
+        .green {
+            background-color: darkolivegreen;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="border">
+        <div class="container">
+            <div class="white">
+                
+            </div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/184-1845759_free-png-king-black-chess-piece-png-images-removebg-preview.png" alt="King">
+            </div>
+            <div class="green">
+                <img src="images/Rook_Black_Chess_Piece_PNG_Clip_Art-2765-removebg-preview.png" alt="Rook">
+            </div>
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/Queen_Black_Chess_Piece_PNG_Clip_Art-2767-removebg-preview.png" alt="Queen">
+            </div>
+            <div class="green">
+                <img src="images/Rook_Black_Chess_Piece_PNG_Clip_Art-2765-removebg-preview.png" alt="Rook">
+            </div>
+
+            <div class="green">
+                <img src="images/p-removebg-preview.png">
+            </div>
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/p-removebg-preview.png">
+            </div>
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white"></div>
+
+            <div class="white">
+                <img src="images/p-removebg-preview.png">
+            </div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/p-removebg-preview.png">
+            </div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/p-removebg-preview.png">
+            </div>
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="green"></div>
+
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/Pawn_White_Chess_Piece_PNG_Clip_Art-2751-removebg-preview.png" alt="Pawn">
+            </div>
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/Pawn_White_Chess_Piece_PNG_Clip_Art-2751-removebg-preview.png" alt="Pawn">
+            </div>
+            <div class="white"></div>
+
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/p-removebg-preview.png">
+            </div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/Knight_Black_Chess_Piece_PNG_Clip_Art-2766-removebg-preview.png" alt="Knight">
+            </div>
+            <div class="green">
+                <img src="images/Knight_White_Chess_Piece_PNG_Clip_Art-2756-removebg-preview.png" alt="Knight">
+            </div>
+            <div class="white"></div>
+            <div class="green"></div>
+
+            <div class="green">
+                <img src="images/Knight_Black_Chess_Piece_PNG_Clip_Art-2766-removebg-preview.png" alt="Knight">
+            </div>
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white">
+                <img src="images/Pawn_White_Chess_Piece_PNG_Clip_Art-2751-removebg-preview.png" alt="Pawn">
+            </div>
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/Pawn_White_Chess_Piece_PNG_Clip_Art-2751-removebg-preview.png" alt="Pawn">
+            </div>
+            <div class="white">
+                <img src="images/Rook_White_Chess_Piece_PNG_Clip_Art-2754-removebg-preview.png" alt="Rook">
+            </div>
+
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/Knight_White_Chess_Piece_PNG_Clip_Art-2756-removebg-preview.png" alt="Knight">
+            </div>
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/Pawn_White_Chess_Piece_PNG_Clip_Art-2751-removebg-preview.png" alt="Pawn">
+            </div>
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/Pawn_White_Chess_Piece_PNG_Clip_Art-2751-removebg-preview.png" alt="Pawn">
+            </div>
+            <div class="white"></div>
+            <div class="green"></div>
+
+            <div class="green">
+                <img src="images/Queen_White_Chess_Piece_PNG_Clip_Art-2757-removebg-preview.png" alt="Queen">
+            </div>
+            <div class="white"></div>
+            <div class="green"></div>
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/king-white-chess-piece-11532856134uuwp9qlozn-removebg-preview.png" alt="King">
+            </div>
+            <div class="white"></div>
+            <div class="green">
+                <img src="images/Rook_White_Chess_Piece_PNG_Clip_Art-2754-removebg-preview.png" alt="Rook">
+            </div>
+            <div class="white"></div>
+        </div>        
+    </div>
+</body>
+</html>

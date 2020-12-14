@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+    <header id="header"> <!-- 1 -->
+        <div class="container">
+            <img src="images/logo.png" alt="" id="header-img"> <!-- 2 -->
+            <nav id="nav-bar"> <!-- 3 -->
+                <ul>
+                    <!-- 4 -->
+                    <li><a href="#header" class="nav-link">HOME</a></li>
+                    <li><a href="#video" class="nav-link">ABOUT</a></li>
+                    <li><a href="#email-newsletter" class="nav-link">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="main">
+        <h1>Achieve your dreams at any cost!</h1>
+        <p class="main-p">If you want the prize you can’t quit at half time. You can’t quit mid season. You must play the whole game. Pre season, through the cold, through darkness, through the challenges, the opponents.</p>
+        <button class="button">Explore more</button>                
+    </div>
+
+    <div>
+        <!-- 6 -->
+        <iframe id="video" width="100%" height="430" src="https://www.youtube.com/embed/t9jLzYxZu6k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div id="email-newsletter">
+        <!-- 7 -->
+        <h2 class="newsletter-text">Send us your email address for free newsletter</h2>
+        <form action="index.html" id="form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
