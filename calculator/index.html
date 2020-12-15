@@ -26,7 +26,7 @@
             align-items: center;
             flex-wrap: wrap;
             width: 300px;
-            height: 350px;
+            height: 400px;
             background-color: #999999;
         }
 
@@ -38,6 +38,21 @@
             align-items: center;
             background-color: #f3f3f3;
             color: #333333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        #reset {
+            height: 65px;
+            width: 95%;
+            background-color: #5c1010;
+            color: #f3f3f3;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
@@ -99,6 +114,7 @@
     </style>
 </head>
 <body>
+    <h1 style="font-size: 55px; color: #444444;margin-bottom: 25px;">Basic Calculator</h1>
     <div class="screen">
         <p id="nums1"></p>
         <p id="s"></p>
@@ -131,6 +147,8 @@
         <div onclick="show(point.innerHTML)" class="tile" id="point">.</div>
 
         <div onclick="getValue(multiply.innerHTML)" class="tile" id="multiply">*</div>
+
+        <div onclick="reset()" id="reset">Reset</div>
     </div>
 
     <script>
@@ -152,6 +170,7 @@
         var multiply = document.querySelector('#multiply');
         var divide = document.querySelector('#divide');
 
+        /* More Variables */
         var main_num = document.querySelector('#main-num');
         var container;
         var sym;
@@ -159,7 +178,7 @@
         var y;
 
         function show(num) {
-            container = main_num.innerHTML += num;            
+            container = main_num.innerHTML += num; 
         }
 
         function getValue(s) {
@@ -177,6 +196,25 @@
             x = parseFloat(x);
             y = parseFloat(y);
 
+            /* disable all buttons except reset */
+            one.style.pointerEvents = 'none';
+            two.style.pointerEvents = 'none';
+            three.style.pointerEvents = 'none';
+            four.style.pointerEvents = 'none';
+            five.style.pointerEvents = 'none';
+            six.style.pointerEvents = 'none';
+            seven.style.pointerEvents = 'none';
+            eight.style.pointerEvents = 'none';
+            nine.style.pointerEvents = 'none';
+            zero.style.pointerEvents = 'none';
+            point.style.pointerEvents = 'none';
+
+            add.style.pointerEvents = 'none';
+            subtract.style.pointerEvents = 'none';
+            divide.style.pointerEvents = 'none';
+            multiply.style.pointerEvents = 'none';
+            document.querySelector('#enter').style.pointerEvents = 'none';
+
             if (sym == '+') {
                 main_num.innerHTML = x + y;
             } else if (sym == '-') {
@@ -186,6 +224,34 @@
             } else if (sym == '*') {
                 main_num.innerHTML = x * y;
             }
+        }
+
+        function reset() {
+            x = 0;
+            y = 0;
+            document.querySelector('#nums1').innerHTML = '';
+            document.querySelector('#nums2').innerHTML = '';
+            document.querySelector('#s').innerHTML = '';
+            main_num.innerHTML = '';
+
+            /* enable all buttons */
+            one.style.pointerEvents = 'auto';
+            two.style.pointerEvents = 'auto';
+            three.style.pointerEvents = 'auto';
+            four.style.pointerEvents = 'auto';
+            five.style.pointerEvents = 'auto';
+            six.style.pointerEvents = 'auto';
+            seven.style.pointerEvents = 'auto';
+            eight.style.pointerEvents = 'auto';
+            nine.style.pointerEvents = 'auto';
+            zero.style.pointerEvents = 'auto';
+            point.style.pointerEvents = 'auto';
+            
+            add.style.pointerEvents = 'auto';
+            subtract.style.pointerEvents = 'auto';
+            divide.style.pointerEvents = 'auto';
+            multiply.style.pointerEvents = 'auto';
+            document.querySelector('#enter').style.pointerEvents = 'auto';
         }
     </script>
 </body>
