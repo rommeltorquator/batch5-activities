@@ -1,7 +1,7 @@
 # Rommel Torquator
 
 ## Here is the Github Repository for this Github Page
-[Github Repo](https://github.com/rommeltorquator/avion-school)
+[Github Repo](https://github.com/rommeltorquator/batch5-activities)
 
 ## Here are the links of my activities and homeworks
   1. [Chess Board](https://rommeltorquator.github.io/batch5-activities/chess-board)
