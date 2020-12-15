@@ -64,23 +64,32 @@
     </style>
 </head>
 <body>
-    <div class="screen">6666</div>
+    <div class="screen">
+    </div>
     <div class="main">
-        <div class="tile" id="one">1</div>
-        <div class="tile" id="two">2</div>
-        <div class="tile" id="three">3</div>
-        <div class="tile" id="add">+</div>
-        <div class="tile" id="four">4</div>
-        <div class="tile" id="five">5</div>
-        <div class="tile" id="six">6</div>
-        <div class="tile" id="subtract">-</div>
-        <div class="tile" id="seven">7</div>
-        <div class="tile" id="eight">8</div>
-        <div class="tile" id="nine">9</div>
-        <div class="tile" id="divide">/</div>
-        <div class="tile enter" id="enter">=</div>
-        <div class="tile" id="zero">0</div>
-        <div class="tile" id="multiply">*</div>
+        <div onclick="show(one.innerHTML)" class="tile" id="one">1</div>
+        <div onclick="show(two.innerHTML)" class="tile" id="two">2</div>
+        <div onclick="show(three.innerHTML)" class="tile" id="three">3</div>
+
+        <div onclick="getValue(add.innerHTML)" class="tile" id="add">+</div>
+
+        <div onclick="show(four.innerHTML)" class="tile" id="four">4</div>
+        <div onclick="show(five.innerHTML)" class="tile" id="five">5</div>
+        <div onclick="show(six.innerHTML)" class="tile" id="six">6</div>
+
+        <div onclick="getValue(subtract.innerHTML)" class="tile" id="subtract">-</div>
+
+        <div onclick="show(seven.innerHTML)" class="tile" id="seven">7</div>
+        <div onclick="show(eight.innerHTML)" class="tile" id="eight">8</div>
+        <div onclick="show(nine.innerHTML)" class="tile" id="nine">9</div>
+
+        <div onclick="getValue(divide.innerHTML)" class="tile" id="divide">/</div>
+
+        <div onclick="total()" class="tile enter" id="enter">=</div>
+
+        <div onclick="show(zero.innerHTML)" class="tile" id="zero">0</div>
+
+        <div onclick="getValue(multiply.innerHTML)" class="tile" id="multiply">*</div>
     </div>
 
     <script>
@@ -94,7 +103,49 @@
         var seven = document.querySelector('#seven');
         var eight = document.querySelector('#eight');
         var nine = document.querySelector('#nine');
-        var zero = document.querySelector('#zero');        
+        var zero = document.querySelector('#zero'); 
+
+        /* math functions */
+        var add = document.querySelector('#add');
+        var subtract = document.querySelector('#subtract');
+        var multiply = document.querySelector('#multiply');
+        var divide = document.querySelector('#divide');
+
+        var screen = document.querySelector('.screen');        
+        var container;
+        var sym;
+        var x;
+        var y;
+
+        function show(num) {
+            container = screen.innerHTML += num;            
+        }
+
+        function getValue(s) {
+            sym = s;
+            x = container;
+            container = 0;
+            screen.innerHTML = '';
+
+            /* shows the symbol and the x value */
+            indicator.innerHTML = "Tae";
+        }
+
+        function total() {            
+            y = container;
+            x = parseFloat(x);
+            y = parseFloat(y);
+
+            if (sym == '+') {
+                screen.innerHTML = x + y;
+            } else if (sym == '-') {
+                screen.innerHTML = x - y;
+            } else if (sym == '/') {
+                screen.innerHTML = x / y;
+            } else if (sym == '*') {
+                screen.innerHTML = x * y;
+            }
+        }
     </script>
 </body>
 </html>
