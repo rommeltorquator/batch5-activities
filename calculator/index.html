@@ -50,21 +50,60 @@
 
         .screen {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: end;
+            flex-direction: column;
+            align-items: flex-end;
+            
+            padding: 20px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             border: 5px solid #666666;
             color: #333333;
             font-size: 21px;
             width: 300px;
-            height: 75px;
-            /* background-color: green; */
+            height: 175px;
+        }
+
+        #enter {
+            background-color: #f58522;
+        }
+
+        #add {
+            background-color: #61b15a;
+            color: #f3f3f3;
+        }
+
+        #subtract {
+            background-color: #c24914;
+            color: #f3f3f3;
+        }
+
+        #divide {
+            background-color: #583d72;
+            color: #f3f3f3;
+        }
+
+        #multiply {
+            background-color: #4e89ae;
+            color: #f3f3f3;
+        }
+
+        #main-num {
+            margin-top: 25px;
+            font-size: 30px;
+        }
+
+        #nums1, #nums2 {
+            color: #999999;
         }
     </style>
 </head>
 <body>
     <div class="screen">
+        <p id="nums1"></p>
+        <p id="s"></p>
+        <p id="nums2"></p>
+        <p id="main-num"></p>
     </div>
     <div class="main">
         <div onclick="show(one.innerHTML)" class="tile" id="one">1</div>
@@ -89,6 +128,8 @@
 
         <div onclick="show(zero.innerHTML)" class="tile" id="zero">0</div>
 
+        <div onclick="show(point.innerHTML)" class="tile" id="point">.</div>
+
         <div onclick="getValue(multiply.innerHTML)" class="tile" id="multiply">*</div>
     </div>
 
@@ -103,7 +144,7 @@
         var seven = document.querySelector('#seven');
         var eight = document.querySelector('#eight');
         var nine = document.querySelector('#nine');
-        var zero = document.querySelector('#zero'); 
+        var zero = document.querySelector('#zero');
 
         /* math functions */
         var add = document.querySelector('#add');
@@ -111,39 +152,39 @@
         var multiply = document.querySelector('#multiply');
         var divide = document.querySelector('#divide');
 
-        var screen = document.querySelector('.screen');        
+        var main_num = document.querySelector('#main-num');
         var container;
         var sym;
         var x;
         var y;
 
         function show(num) {
-            container = screen.innerHTML += num;            
+            container = main_num.innerHTML += num;            
         }
 
         function getValue(s) {
             sym = s;
             x = container;
+            document.querySelector('#nums1').innerHTML = x;
+            document.querySelector('#s').innerHTML = sym;
             container = 0;
-            screen.innerHTML = '';
-
-            /* shows the symbol and the x value */
-            indicator.innerHTML = "Tae";
+            main_num.innerHTML = '';
         }
 
         function total() {            
             y = container;
+            document.querySelector('#nums2').innerHTML = y;
             x = parseFloat(x);
             y = parseFloat(y);
 
             if (sym == '+') {
-                screen.innerHTML = x + y;
+                main_num.innerHTML = x + y;
             } else if (sym == '-') {
-                screen.innerHTML = x - y;
+                main_num.innerHTML = x - y;
             } else if (sym == '/') {
-                screen.innerHTML = x / y;
+                main_num.innerHTML = x / y;
             } else if (sym == '*') {
-                screen.innerHTML = x * y;
+                main_num.innerHTML = x * y;
             }
         }
     </script>
