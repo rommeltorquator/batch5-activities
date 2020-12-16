@@ -40,6 +40,7 @@
             color: #333333;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
+            font-size: 30px;
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
         }
 
@@ -52,9 +53,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
+            background-color: #583d72;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
+            font-size: 30px;
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
         }
 
@@ -73,6 +75,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             border: 5px solid #666666;
+            background-color: #f7f7f6;
             color: #333333;
             font-size: 21px;
             width: 300px;
@@ -94,7 +97,8 @@
         }
 
         #divide {
-            background-color: #583d72;
+            
+            background-color: #5c1010;
             color: #f3f3f3;
         }
 
@@ -114,7 +118,7 @@
     </style>
 </head>
 <body>
-    <h1 style="font-size: 55px; color: #444444;margin-bottom: 25px;">Basic Calculator</h1>
+    <h1 style="font-size: 55px; color: #444444;margin-bottom: 35px;">Basic Calculator</h1>
     <div class="screen">
         <p id="nums1"></p>
         <p id="s"></p>
@@ -153,7 +157,7 @@
 
     <script>
         /* numbers */
-        var one = document.getElementById('one');
+        var one = document.querySelector('#one');
         var two = document.querySelector('#two');
         var three = document.querySelector('#three');
         var four = document.querySelector('#four');
@@ -164,7 +168,7 @@
         var nine = document.querySelector('#nine');
         var zero = document.querySelector('#zero');
 
-        /* math functions */
+        /* math symbols */
         var add = document.querySelector('#add');
         var subtract = document.querySelector('#subtract');
         var multiply = document.querySelector('#multiply');
@@ -188,6 +192,11 @@
             document.querySelector('#s').innerHTML = sym;
             container = 0;
             main_num.innerHTML = '';
+
+            add.style.pointerEvents = 'none';
+            subtract.style.pointerEvents = 'none';
+            divide.style.pointerEvents = 'none';
+            multiply.style.pointerEvents = 'none';
         }
 
         function total() {            
@@ -197,23 +206,7 @@
             y = parseFloat(y);
 
             /* disable all buttons except reset */
-            one.style.pointerEvents = 'none';
-            two.style.pointerEvents = 'none';
-            three.style.pointerEvents = 'none';
-            four.style.pointerEvents = 'none';
-            five.style.pointerEvents = 'none';
-            six.style.pointerEvents = 'none';
-            seven.style.pointerEvents = 'none';
-            eight.style.pointerEvents = 'none';
-            nine.style.pointerEvents = 'none';
-            zero.style.pointerEvents = 'none';
-            point.style.pointerEvents = 'none';
-
-            add.style.pointerEvents = 'none';
-            subtract.style.pointerEvents = 'none';
-            divide.style.pointerEvents = 'none';
-            multiply.style.pointerEvents = 'none';
-            document.querySelector('#enter').style.pointerEvents = 'none';
+            disableButtons('none');
 
             if (sym == '+') {
                 main_num.innerHTML = x + y;
@@ -235,23 +228,47 @@
             main_num.innerHTML = '';
 
             /* enable all buttons */
-            one.style.pointerEvents = 'auto';
-            two.style.pointerEvents = 'auto';
-            three.style.pointerEvents = 'auto';
-            four.style.pointerEvents = 'auto';
-            five.style.pointerEvents = 'auto';
-            six.style.pointerEvents = 'auto';
-            seven.style.pointerEvents = 'auto';
-            eight.style.pointerEvents = 'auto';
-            nine.style.pointerEvents = 'auto';
-            zero.style.pointerEvents = 'auto';
-            point.style.pointerEvents = 'auto';
-            
-            add.style.pointerEvents = 'auto';
-            subtract.style.pointerEvents = 'auto';
-            divide.style.pointerEvents = 'auto';
-            multiply.style.pointerEvents = 'auto';
-            document.querySelector('#enter').style.pointerEvents = 'auto';
+            enableButtons('auto');        
+        }
+
+        function disableButtons(val) {
+            one.style.pointerEvents = val;
+            two.style.pointerEvents = val;
+            three.style.pointerEvents = val;
+            four.style.pointerEvents = val;
+            five.style.pointerEvents = val;
+            six.style.pointerEvents = val;
+            seven.style.pointerEvents = val;
+            eight.style.pointerEvents = val;
+            nine.style.pointerEvents = val;
+            zero.style.pointerEvents = val;
+            point.style.pointerEvents = val;
+
+            add.style.pointerEvents = val;
+            subtract.style.pointerEvents = val;
+            divide.style.pointerEvents = val;
+            multiply.style.pointerEvents = val;
+            document.querySelector('#enter').style.pointerEvents = val;
+        }
+
+        function enableButtons(val) {
+            one.style.pointerEvents = val;
+            two.style.pointerEvents = val;
+            three.style.pointerEvents = val;
+            four.style.pointerEvents = val;
+            five.style.pointerEvents = val;
+            six.style.pointerEvents = val;
+            seven.style.pointerEvents = val;
+            eight.style.pointerEvents = val;
+            nine.style.pointerEvents = val;
+            zero.style.pointerEvents = val;
+            point.style.pointerEvents = val;
+
+            add.style.pointerEvents = val;
+            subtract.style.pointerEvents = val;
+            divide.style.pointerEvents = val;
+            multiply.style.pointerEvents = val;
+            document.querySelector('#enter').style.pointerEvents = val;
         }
     </script>
 </body>
