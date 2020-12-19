@@ -46,17 +46,31 @@
 
         #reset {
             height: 65px;
-            width: 95%;
+            width: 46%;
             background-color: #5c1010;
             color: #f3f3f3;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #583d72;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 30px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        #delete {
+            height: 65px;
+            width: 46%;            
+            background-color: purple;
+            color: #f3f3f3;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 60px;
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
         }
 
@@ -115,10 +129,23 @@
         #nums1, #nums2 {
             color: #999999;
         }
+
+        .main-heading {
+            font-size: 55px;
+            color: #444444;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 500px) {
+            .main-heading {
+                font-size: 45px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1 style="font-size: 55px; color: #444444;margin-bottom: 35px;">Basic Calculator</h1>
+    <h1 class="main-heading">Basic Calculator</h1>
     <div class="screen">
         <p id="nums1"></p>
         <p id="s"></p>
@@ -153,6 +180,7 @@
         <div onclick="getValue(multiply.innerHTML)" class="tile" id="multiply">*</div>
 
         <div onclick="reset()" id="reset">Reset</div>
+        <div onclick="del()" id="delete">&#8592;</div>
     </div>
 
     <script>
@@ -231,6 +259,14 @@
             enableButtons('auto');        
         }
 
+        
+        function del() {
+            // container.innerHTML.slice(0, -1);
+            var d = main_num.innerHTML.slice(0, -1);
+            main_num.innerHTML = d;
+            // console.log(main_num.innerHTML);
+        }
+
         function disableButtons(val) {
             one.style.pointerEvents = val;
             two.style.pointerEvents = val;
@@ -249,6 +285,7 @@
             divide.style.pointerEvents = val;
             multiply.style.pointerEvents = val;
             document.querySelector('#enter').style.pointerEvents = val;
+            document.querySelector('#delete').style.pointerEvents = val;
         }
 
         function enableButtons(val) {
@@ -269,6 +306,7 @@
             divide.style.pointerEvents = val;
             multiply.style.pointerEvents = val;
             document.querySelector('#enter').style.pointerEvents = val;
+            document.querySelector('#delete').style.pointerEvents = val;
         }
     </script>
 </body>
