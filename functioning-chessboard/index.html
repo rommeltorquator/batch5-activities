@@ -1,216 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Board</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;        
-            box-sizing: border-box;
-        }
+<head>
+    <title>Chess Game</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="./javascript/chess.js"></script>
+	<style>
+		h1,h2,h3{
+			text-align:center;
+		}
 
         body {
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* background: #f5f5f5; */
             background: #999999;
         }
-
-        .border {
-            border: 4px solid #453823;
-        }
-
-        .container {
-            width: 40vw;
-            height: 40vw;
-
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(8, 1fr);
-        }
-
-        .white, .green {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        img {
-            max-height: 43%;
-            max-width: 43%;
-        }
-
-        .white {
-            background-color: antiquewhite;
-        }
-
-        .green {
-            background-color: darkolivegreen;
-        }
-
-        @media screen and (max-width: 500px) {
-            .container {
-                width: 90vw;
-                height: 90vw;
-            }
-        }
-
-    </style>
+	</style>
 </head>
+
 <body>
-    
-
-    <div class="border">
-        <div class="container">
-            <!-- row 1 -->
-            <div class="white">
-                <img src="images/rook-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/knight-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/bishop-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/king-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/queen-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/bishop-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/knight-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/rook-black.png" alt="">
-            </div>
-
-            <!-- row 2 -->
-            <div class="green">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-black.png" alt="">
-            </div>
-
-            <!-- row 3 -->
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-
-            <!-- row 4 -->
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-
-            <!-- row 5 -->
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-
-            <!-- row 6 -->
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-            <div class="green"></div>
-            <div class="white"></div>
-
-            <!-- row 7 -->
-            <div class="white">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/pawn-white.png" alt="">
-            </div>
-
-            <!-- row 8 -->
-            <div class="green">
-                <img src="images/rook-white.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/knight-white.png" alt="">
-            </div>
-            <div class="green">                
-                <img src="images/bishop-white.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/king-white.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/queen-white.png" alt="">
-            </div>
-            <div class="white">                
-                <img src="images/bishop-white.png" alt="">
-            </div>
-            <div class="green">
-                <img src="images/knight-white.png" alt="">
-            </div>
-            <div class="white">
-                <img src="images/rook-white.png" alt="">
-            </div>
-        </div>        
-    </div>
+    <canvas id="chessCanvas" width="800" height="800" style="background-color: orange; border: 4px solid #453823;"></canvas>
+    <h2 id="currentTeamText"></h2>
+    <h3 id="whiteCasualities"></h2>
+    <h3 id="blackCasualities"></h2>
 </body>
-</html>
