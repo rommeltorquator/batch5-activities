@@ -13,6 +13,5 @@
   7. [Survey Form](https://rommeltorquator.github.io/batch5-activities/survey-form)
   8. [Basic Calculator](https://rommeltorquator.github.io/batch5-activities/calculator)
   9. [BMI Activity](https://jsfiddle.net/xj7kmbvL/)
-  10. [Functioning Chess Board](https://rommeltorquator.github.io/batch5-activities/functioning-chessboard)
 
 This is Rommel Torquator, please feel free to access all my files
