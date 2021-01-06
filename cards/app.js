@@ -1,11 +1,12 @@
 let cards = ['♥A', '♥2', '♥3', '♥4', '♥5', '♥6', '♥7', '♥8', '♥9', '♥10', '♥J', '♥Q', '♥K', '♦A', '♦2', '♦3', '♦4', '♦5', '♦6', '♦7', '♦8', '♦9', '♦10', '♦J', '♦Q', '♦K', '♠A', '♠2', '♠3', '♠4', '♠5', '♠6', '♠7', '♠8', '♠9', '♠10', '♠J', '♠Q', '♠K', '♣A', '♣2', '♣3', '♣4', '♣5', '♣6', '♣7', '♣8', '♣9', '♣10', '♣J', '♣Q', '♣K'];
 
-let duplicate = [];
-let history = [];
+let duplicate = []; // contains symbols
+let history = []; // contains symbols
+let historyName = []; // contains the history in name form
+let c = 0; // for previous and next buttons
 let x = 0;
-let historyLength;
 
-// connecting to DOM
+// ************************** functions **************************
 
 // showing all remaining cards
 function showCards() {
@@ -21,18 +22,6 @@ function showHistory() {
     }
 }
 
-// next button
-document.querySelector('#next').addEventListener('click', function() {
-    if(history.length > 0) {
-        // gets the total length of draw history array
-        historyLength = history.length;
-        if(historyLength > 0) {
-            document.querySelector('#next').disabled = false;
-            console.log('meron na');
-        }
-    }
-});
-
 // get 1 card and display the dealt card
 function getDealtCard(deck) {
     document.querySelector('#dealt').textContent = deal(shuffleCards(deck));
@@ -40,16 +29,23 @@ function getDealtCard(deck) {
     ++x;
 }
 
+// enable the button
+function enableButtons() {
+    if(history.length > 1) {
+        document.querySelector('#prev').disabled = false;
+        document.querySelector('#prev').style.opacity = 1;
+    }
+}
+
+// ************************** logic part **************************
+
 // shows the cards on DOM
 showCards();
 
-// reshuffle the deck, reset the session
-document.querySelector('#reshuffle').addEventListener('click', function() {
-    location.reload();
-});
-
 // deal button
 document.querySelector('#deal').addEventListener('click', function() {
+    c++;
+
     // get 1 card and display the dealt card
     getDealtCard(cards);
 
@@ -65,7 +61,56 @@ document.querySelector('#deal').addEventListener('click', function() {
     if(cards.length === 0) {
         document.querySelector('#deal').disabled = true;
     }
+
+    // enable to prev and next buttons once a deal is made
+    enableButtons();
 });
+
+// previous deal
+document.querySelector('#prev').addEventListener('click', function() {
+    c = c - 1;
+    // document.querySelector('#dealt').textContent = `pang ${c}`;    
+
+    // disables the button if no more previous elements
+    if(c < 2) {
+        document.querySelector('#prev').disabled = true;
+        document.querySelector('#prev').style.opacity = .4;
+    }
+
+    // shows the previous deal
+    document.querySelector('#dealt').textContent = `${historyName[c - 1]} ${history[c - 1]}`;  
+
+    // to enable the next button, the user must press 1 prev or more
+    if(historyName.length - (c - 1) === 2) {
+        document.querySelector('#next').disabled = false;
+        document.querySelector('#next').style.opacity = 1;
+    }
+});
+
+// next
+document.querySelector('#next').addEventListener('click', function() {
+    // enable the prev button
+    document.querySelector('#prev').disabled = false;
+    document.querySelector('#prev').style.opacity = 1;
+
+    document.querySelector('#dealt').textContent = `${historyName[c]} ${history[c]}`;
+    c++;    
+
+    // disable the button once no more available next
+    if(c == history.length) {
+        document.querySelector('#next').disabled = true;
+        document.querySelector('#next').style.opacity = .4;
+    }
+});
+
+// reshuffle the deck, reset the session
+document.querySelector('#reshuffle').addEventListener('click', function() {
+    document.querySelector('#prev').disabled = true;
+    document.querySelector('#next').disabled = true;
+    location.reload();
+});
+
+// ************************** 4 card tasks **************************
 
 // task 1
 function shuffleCards(array) {
@@ -91,7 +136,6 @@ function asc(array) {
     for(let i = 0; i < duplicate.length; i++) {
         array.splice(i, 1, duplicate[i]);
     }    
-
     return array;
 }
 
@@ -111,8 +155,12 @@ function deal(array) {
     // to remove the dealt card inside the duplicate array
     duplicate.splice(i, 1);
 
+    // stores the dealt card on its name form
+    let word = printName(removed);
+    historyName.push(word);
+
     // to print the name of the removed card
-    return printName(removed);
+    return word;
 }
 
 function printName(card) {

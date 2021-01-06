@@ -16,8 +16,8 @@
         }
 
         body {
-            height: 100vh;
-            background-color: #ebebeb;            
+            height: 100vh;            
+            background-color: #1A1D2A;            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,12 +35,12 @@
         }
 
         h3 {
-            font-size: 24px;
+            font-size: 25px;
         }
 
         p {
             text-align: justify;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .box {
@@ -58,7 +58,7 @@
             padding: 7px;
             margin-bottom: 8px;
             font-size: 18px;
-            border-radius: 3px;
+            border-radius: 5px;
         }
 
         #dealt {
@@ -81,8 +81,8 @@
             color: #101321;
         }
 
-        .main {
-            border: 2px solid #101321;
+        .main {                
+            background-color: #ebebeb;     
             width: 45vw;
             padding: 25px;
             border-radius: 7px;
@@ -96,6 +96,7 @@
             font-size: 15px;
             border-radius: 3px;
             color: #101321;
+            opacity: 0.7;
         }
 
         @media screen and (max-width: 600px) {
@@ -105,7 +106,7 @@
             }
 
             .box {
-                height: 200px;
+                min-height: 100%;
                 margin: 0 0 20px 0;
             }
 
@@ -118,11 +119,12 @@
             p {
                 text-align: center;
             }
+
         }
 
         @media screen and (max-width: 900px) and (min-width: 499px) {
             .main {                
-                width: 70%; 
+                width: 80%; 
                 padding: 10px;
             }
         }
@@ -135,7 +137,7 @@
 
         <div class="box">
             <h3>Draw history:</h3>
-            <p id="drawHistory"></p>
+            <p id="drawHistory"></p>            
         </div>
 
         <div class="box">
@@ -144,13 +146,15 @@
         </div>
 
         <div class="box2">
-            <h3>Dealt card: <span id="dealt"></span></h3>          
+            <h3>Dealt card: <span id="dealt"></span></h3>    
             <br>
-            <button class="btn" id="prev" disabled>&#9664;</button>
-            <button class="btn" id="next" disabled>&#9654;</button>
-        </div>
 
-        
+            <p style="text-align: center;">
+                <button class="btn" id="prev" disabled>&#9664;</button>
+                <button class="btn" id="next" disabled>&#9654;</button>        
+            </p>
+            
+        </div>
 
         <button class="btn" id="deal">Deal card</button>
         <button class="btn" id="reshuffle">Reshuffle deck</button>
