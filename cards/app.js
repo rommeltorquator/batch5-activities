@@ -3,6 +3,7 @@ let cards = ['♥A', '♥2', '♥3', '♥4', '♥5', '♥6', '♥7', '♥8', '�
 let duplicate = [];
 let history = [];
 let x = 0;
+let historyLength;
 
 // connecting to DOM
 
@@ -20,11 +21,23 @@ function showHistory() {
     }
 }
 
+// next button
+document.querySelector('#next').addEventListener('click', function() {
+    if(history.length > 0) {
+        // gets the total length of draw history array
+        historyLength = history.length;
+        if(historyLength > 0) {
+            document.querySelector('#next').disabled = false;
+            console.log('meron na');
+        }
+    }
+});
+
 // get 1 card and display the dealt card
-function getDealtCard(deck) {    
+function getDealtCard(deck) {
     document.querySelector('#dealt').textContent = deal(shuffleCards(deck));
-    document.querySelector('#dealt').textContent += `: ${history[x]}`;
-    ++x;    
+    document.querySelector('#dealt').textContent += ` ${history[x]}`;
+    ++x;
 }
 
 // shows the cards on DOM
@@ -47,7 +60,6 @@ document.querySelector('#deal').addEventListener('click', function() {
     // shows the deal history
     document.querySelector('#drawHistory').textContent = null;
     showHistory();
-
 
     // disables the deal button if the deck is already empty
     if(cards.length === 0) {

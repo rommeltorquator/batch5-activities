@@ -17,52 +17,143 @@
 
         body {
             height: 100vh;
-            background-color: #1d3557;
-            color:#f1faee;
+            background-color: #ebebeb;            
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        h1,
+        h3,
+        p {
+            color: #101321;            
+        }
+
         h1 {
             font-size: 52px;
-            text-align: center;
+            text-align: center;            
         }
 
         h3 {
-            font-size: 27px;
+            font-size: 24px;
         }
 
         p {
             text-align: justify;
+            font-size: 18px;
+        }
+
+        .box {
+            min-height: 140px;
+            margin: 20px 0;
+        }
+
+        .box2 {
+            min-height: 130px;
+            margin: 5px 0;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 7px;
+            margin-bottom: 8px;
+            font-size: 18px;
+            border-radius: 3px;
+        }
+
+        #dealt {
+            font-weight: bold;
+            font-size: 24px;       
+            color: #243754;
+        }
+
+        .btn:hover {
+            opacity: .9;
+        }
+
+        #deal {
+            background-color: #243754;
+            color: #ebebeb;
+        }
+
+        #reshuffle {
+            background-color: #94ae3f;
+            color: #101321;
+        }
+
+        .main {
+            border: 2px solid #101321;
+            width: 45vw;
+            padding: 25px;
+            border-radius: 7px;
+        }
+
+        #prev,
+        #next {
+            width: 65px;
+            padding: 0;
+            /* margin-bottom: 8px; */
+            font-size: 15px;
+            border-radius: 3px;
+            color: #101321;
+        }
+
+        @media screen and (max-width: 600px) {
+            .main {                
+                width: 90%;
+                padding: 10px;
+            }
+
+            .box {
+                height: 200px;
+                margin: 0 0 20px 0;
+            }
+
+            .box2 {
+                margin: 0 0 10px 0;
+            }
+
+            h1,
+            h3,
+            p {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 900px) and (min-width: 499px) {
+            .main {                
+                width: 70%; 
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="main" style="width: 500px; height: 700px;">
+    <div class="main">
         <h1>Cards</h1>
         <br>
 
-        <h3>Draw history:</h3>
-        <p id="drawHistory"></p>
-        <br>
-        <br>
+        <div class="box">
+            <h3>Draw history:</h3>
+            <p id="drawHistory"></p>
+        </div>
 
-        <h3>Remaining cards:</h3>
-        <p id="remaining"></p>
-        <br>        
+        <div class="box">
+            <h3>Remaining cards:</h3>
+            <p id="remaining"></p>               
+        </div>
 
-        <h3>Dealt card:</h3>
-        <p id="dealt"></p>
-        <br>
+        <div class="box2">
+            <h3>Dealt card: <span id="dealt"></span></h3>          
+            <br>
+            <button class="btn" id="prev" disabled>&#9664;</button>
+            <button class="btn" id="next" disabled>&#9654;</button>
+        </div>
 
-        <!-- <button>Previous</button>
-        <button>Next</button>
-        <br>
-        <br> -->
+        
 
-        <button id="deal">Deal card</button>
-        <button id="reshuffle">Reshuffle deck</button>
+        <button class="btn" id="deal">Deal card</button>
+        <button class="btn" id="reshuffle">Reshuffle deck</button>
     </div>
 
     <script src="app.js"></script>
