@@ -14,5 +14,7 @@
   8. [Basic Calculator](https://rommeltorquator.github.io/batch5-activities/calculator)
   9. [BMI Activity](https://jsfiddle.net/xj7kmbvL/)
   10. [Deck of Cards](https://jsfiddle.net/qz2tmxL6/)
+  11. [Card Game](https://rommeltorquator.github.io/batch5-activities/cards)
+  12. [Quiz Game](https://rommeltorquator.github.io/batch5-activities/quiz)
 
 This is Rommel Torquator, please feel free to access all my files

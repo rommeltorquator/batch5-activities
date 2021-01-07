@@ -10,10 +10,12 @@ function Question(ans) {
     let c2 = [41, 35, 29]; // 2
     let c3 = [3, 2, 1]; // 1
     let n = 0;
+    let ask = false;
     
     // displaying the questions
     function showQuestion() {
         console.log(questions[rand - 1]);
+        ask = true;
     }
     
     // displaying the choices
@@ -68,7 +70,10 @@ function Question(ans) {
     
     showQuestion();
     showChoices(rand);
-    askAnswer(rand);
+    
+    if(ask) {
+    	askAnswer(rand);
+    }
 }
 
 Question();

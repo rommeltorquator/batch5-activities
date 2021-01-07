@@ -94,7 +94,7 @@ document.querySelector('#next').addEventListener('click', function() {
     document.querySelector('#prev').style.opacity = 1;
 
     document.querySelector('#dealt').textContent = `${historyName[c]} ${history[c]}`;
-    c++;    
+    c++;
 
     // disable the button once no more available next
     if(c == history.length) {
