@@ -92,10 +92,17 @@ const checkQuantity = (title, quantity, b) => {
 const totalEarnings = () => console.log(store.earnings);
 
 // shows the list of books including the price and quantity
-const listInventory = () => store.inventory.forEach(i => console.log(`Title: ${i.title}, Price: ${i.price}, Quantity: ${i.quantity}`));
+const listInventory = () => {
+    if(store.inventory.length != 0) {
+        store.inventory.forEach(i => console.log(`Title: ${i.title}, Price: ${i.price}, Quantity: ${i.quantity}`)); 
+    } else {
+        console.log("No available stocks");
+    }
+} 
 
 addBook("The Bible", 20, 50);
 restockBook("Book of the Dead", 5000);
-sellBook("Book of the Dead", 4);
-totalEarnings();
+
+sellBook("Book of the Dead", 5000000);
 listInventory();
+totalEarnings();
