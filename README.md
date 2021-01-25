@@ -16,7 +16,6 @@
   10. [Deck of Cards](https://jsfiddle.net/qz2tmxL6/)
   11. [Card Game](https://rommeltorquator.github.io/batch5-activities/cards)
   12. [Quiz Game](https://rommeltorquator.github.io/batch5-activities/quiz)
-  13. [Pig Game](https://amacariola.github.io/batch5-pig-game/index.html)
-  14. [Book Store](https://rommeltorquator.github.io/batch5-activities/bookstore)
+  13. [Book Store](https://rommeltorquator.github.io/batch5-activities/bookstore)
 
 This is Rommel Torquator, please feel free to access all my files
