@@ -1,0 +1,66 @@
+***** INDIVIDUAL PLAYER *****
+
+
+specific nba player - https://www.balldontlie.io/api/v1/players?search=lebron%20james /
+
+specific nba player - https://www.balldontlie.io/api/v1/players/237
+
+
+***** TEAMS *****
+
+
+current nba teams - https://www.balldontlie.io/api/v1/teams /
+
+specific nba team - https://www.balldontlie.io/api/v1/teams/30
+
+
+***** GAMES *****
+
+
+all games of 1 team for a season - https://www.balldontlie.io/api/v1/games?seasons[]=2020&team_ids[]=1
+
+next page for all games of 1 team - https://www.balldontlie.io/api/v1/games?seasons[]=2020&team_ids[]=1&page=2
+
+to get a specific game - https://www.balldontlie.io/api/v1/games/350
+
+get a game of 1 team in a speficic date - https://www.balldontlie.io/api/v1/games?seasons[]=2020&team_ids[]=1&dates[]=%272021-02-04%27 /
+
+total games of 1 NBA team per date range - https://www.balldontlie.io/api/v1/games?team_ids[]=1&start_date=%272021-01-01%27&end_date=%272021-02-01%27 /
+
+
+***** STATS *****
+
+
+all games of a specific nba player per season - https://www.balldontlie.io/api/v1/stats?seasons[]=2018&player_ids[]=237 /
+
+current season average of a specific nba player - https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237 /
+
+comparison of stats of 2 nba players per season - https://www.balldontlie.io/api/v1/season_averages?season=2015&player_ids[]=17&player_ids[]=237 /
+
+
+Core functionalities:
+
+INDIVIDUAL NBA PLAYER:
+- shows the information of an nba player for the current season (full name, position, full team name, height, weight, ppg, rpg, apg, gp, min, fgm, fga, fg%)
+- shows the next 3 or 4 games of a selected nba player (month, day, year, opponent team name, time)
+- shows the last 3 previous game stats of selected nba player (month, day, year, opponent team name, pts, reb, ast, stl, min, fg%)
+
+COMPARISON OF 2 NBA PLAYERS:
+- shows the information of selected nba players (full name, position, full team name, height, weight, ppg, rpg, apg, gp, min, fgm, fga, fg%)
+- hightlights the stat of a player that has higher value than the other (ppg, rpg, apg, gp, min, fgm, fga, fg%)
+
+TEAMS:
+- shows the information of all 30 nba teams, separated according to conference (team logo, team full name, conference, division)
+- shows the upcoming game of a selected nba team (team logo, month, day, year, opponent team full name, opponent conference, time)
+- shows the current scores, quarter of a live game of a selected team
+- shows "No upcoming game on modal" if no upcoming game for a selected nba team
+
+
+
+
+
+
+
+
+
+
