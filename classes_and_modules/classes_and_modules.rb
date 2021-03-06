@@ -1,8 +1,6 @@
-module PortableDevice 
-    @battery_level = 0
-    
+module PortableDevice    
     def battery_level
-        @battery_level
+        @battery_level ||=0
     end
 
     def battery_level=(l) 
@@ -38,7 +36,12 @@ class Computer
     include ComputeDevice # boot
 end
 
-iphone = Phone.new
+acer = Phone.new
+# acer.battery_level = 50
+acer.charge
+puts acer.battery_level
+
+iphone = Laptop.new
 iphone.battery_level = 20
 puts iphone.battery_level
 iphone.charge
@@ -49,3 +52,4 @@ puts iphone.battery_level
 
 macbook_pro = Computer.new
 macbook_pro.boot
+
