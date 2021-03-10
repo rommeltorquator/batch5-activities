@@ -35,3 +35,35 @@ SELECT AVG(age) FROM STUDENTS;
 SELECT * FROM STUDENTS
 ORDER BY age DESC;
 
+***** 3-10-2021 activity *****
+
+CREATE TABLE classrooms (
+	id INT,
+    student_id INT,
+    section VARCHAR(50),
+    PRIMARY KEY (id),
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+INSERT INTO classrooms (id, student_id, section)
+VALUES
+(1, 1, "A"),
+(2, 2, "A"),
+(3, 3, "B"),
+(4, 4, "C"),
+(5, 5, "B"),
+(6, 6, "A"),
+(7, 7, "C"),
+(8, 8, "B"),
+(9, 9, "B"),
+(10, 10, "C");
+
+SELECT first_name, last_name, section
+FROM students
+INNER JOIN classrooms
+ON students.id = classrooms.student_id;
+
+SELECT students.first_name, students.last_name, classrooms.section, students.age, classrooms.student_id
+FROM students
+LEFT JOIN classrooms
+ON students.id = classrooms.student_id;
