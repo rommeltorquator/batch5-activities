@@ -67,3 +67,60 @@ SELECT students.first_name, students.last_name, classrooms.section, students.age
 FROM students
 LEFT JOIN classrooms
 ON students.id = classrooms.student_id;
+
+***** 3-12-2021 activity *****
+
+Number 0.)
+
+SELECT COUNT(DISTINCT inventory_id) AS unique_inventory_rented, COUNT(inventory_id) AS total_inventory_rented 
+FROM rental;
+
+Number 1.)
+
+SELECT
+film.title AS film_title,
+film.release_year AS release_year,
+film.rating AS rating,  
+CONCAT(actor.first_name, ' ', actor.last_name) AS actor_full_name
+FROM film_actor
+INNER JOIN film
+ON film_actor.film_id = film.film_id
+INNER JOIN actor
+ON film_actor.actor_id = actor.actor_id
+WHERE actor.last_name IN ('Torn', 'Streep')
+AND actor.first_name = 'Dan'
+ORDER BY film_title;
+
+Number 2.)
+
+SELECT 
+CONCAT(actor.first_name, ' ', actor.last_name) AS actor_full_name,
+title AS film_title,
+category.name AS category_name
+FROM film_actor
+INNER JOIN film
+ON film_actor.film_id = film.film_id
+INNER JOIN actor
+ON film_actor.actor_id = actor.actor_id
+INNER JOIN film_category
+ON film_actor.film_id = film_category.film_id
+INNER JOIN category
+ON film_category.category_id = category.category_id
+WHERE actor.last_name LIKE 'D%'
+AND category.name = 'Comedy'
+ORDER BY CONCAT(actor.first_name, ' ', actor.last_name);
+
+Number 3.)
+
+SELECT DISTINCT CONCAT(staff.first_name, ' ', staff.last_name) AS staff_full_name
+FROM payment
+INNER JOIN staff
+ON payment.staff_id = staff.staff_id
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id
+INNER JOIN address
+ON customer.address_id = address.address_id
+INNER JOIN city
+ON address.city_id = city.city_id
+INNER JOIN country
+ON city.country_id = country.country_id;
