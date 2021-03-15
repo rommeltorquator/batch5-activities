@@ -1,3 +1,6 @@
-x = "This is a test, aeiou"
-x = x.gsub(/[aeiou]/i, '')
-p x
+def disemvowel(str)
+    str = str.gsub(/[aeiou]/i, '')
+    str
+end
+
+p disemvowel("this is a test aeiou")
